@@ -1,0 +1,9 @@
+{
+  "_cts": {
+    "testtyperepeatable": {},
+    "menu": {}
+  },
+  "slices": {
+    "TestSlice": {}
+  }
+}

@@ -1,0 +1,172 @@
+@import "./sassdirectory/colors.scss";
+
+@font-face {
+  font-family: Satoshi;
+  src: url("./fonts/Satoshi-Bold.otf");
+}
+
+//voir mixblend mod et les font families des bouttons
+
+@font-face {
+  font-family: Inter;
+  src: url("./fonts/Inter-Regular.ttf");
+  font-style: normal;
+  font-style: bold;
+  font-style: italic;
+}
+
+@mixin Heading {
+  font-family: Satoshi;
+  font-weight: 400;
+  color: $Greyscales-Black;
+  mix-blend-mode: difference;
+}
+
+@mixin Links {
+  font-family: Satoshi;
+  font-weight: 400;
+  color: $Greyscales-Black;
+  mix-blend-mode: difference; //check later
+}
+
+@mixin Paragraph {
+  font-family: inter;
+
+  color: $Greyscales-Black;
+  mix-blend-mode: difference;
+}
+
+h1 {
+  @include Heading;
+  font-size: 56px;
+  line-height: 110%;
+}
+
+h2 {
+  @include Heading;
+  font-size: 48px;
+  line-height: 110%;
+}
+
+h3 {
+  @include Heading;
+  font-size: 28px;
+  line-height: 110%;
+}
+
+h4 {
+  @include Heading;
+  font-size: 24px;
+  line-height: 110%;
+}
+h5 {
+  @include Heading;
+  font-size: 20px;
+  line-height: 110%;
+}
+h6 {
+  @include Heading;
+  font-size: 16px;
+  line-height: 110%;
+}
+
+a {
+  @include Links;
+  .big {
+    font-size: 18px;
+    line-height: 110%;
+  }
+  .medium {
+    font-size: 16px;
+    line-height: 110%;
+  }
+  .small {
+    font-size: 14px;
+    line-height: 110%;
+  }
+}
+
+p {
+  @include Paragraph;
+  .big {
+    font-size: 18px;
+    line-height: 150%;
+  }
+  .medium {
+    font-size: 16px;
+    line-height: 150%;
+  }
+  .small {
+    font-size: 14px;
+    line-height: 130%;
+  }
+  .tiny {
+    font-size: 12px;
+    line-height: 130%;
+  }
+  .quote {
+    font-size: 24px;
+    line-height: 160%;
+    font-style: italic;
+  }
+}
+
+.CTA-big {
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  padding: 20px 72px;
+
+  background-color: $Primaires-Gold;
+  color: $Primaires-black;
+  :hover {
+    background-color: $Primaires-black;
+    color: $Greyscales-White;
+  }
+}
+
+.CTA-Medium {
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  padding: 16px 40px;
+  &.style1 {
+    background-color: $Primaires-Gold;
+    color: $Primaires-black;
+    :hover {
+      background-color: $Primaires-black;
+      color: $Greyscales-White;
+    }
+  }
+  &.style2 {
+    background-color: $Primaires-black;
+    color: $Greyscales-White;
+    :hover {
+      background-color: $Greyscales-Dark_Grey;
+      color: $Greyscales-White;
+    }
+  }
+}
+
+.CTA-Small {
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  padding: 12.5px 24px;
+  &.style1 {
+    background-color: $Primaires-Gold;
+    color: $Primaires-black;
+    :hover {
+      background-color: $Primaires-black;
+      color: $Greyscales-White;
+    }
+  }
+  &.style2 {
+    background-color: $Greyscales-Dark_Grey;
+    color: $Greyscales-White;
+    :hover {
+      background-color: $Primaires-Gold;
+      color: $Greyscales-Black;
+    }
+  }
+}
