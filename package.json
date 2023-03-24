@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "devall": "concurrently \"npm:dev\"  \"npm:slicemachine\"",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -15,11 +16,13 @@
     "@prismicio/next": "^1.0.3",
     "@prismicio/react": "^2.5.2",
     "@prismicio/slice-simulator-react": "^0.2.3",
+    "concurrently": "^7.6.0",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "next": "13.2.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "sass": "^1.60.0"
   },
   "devDependencies": {
     "@prismicio/types": "^0.2.7",

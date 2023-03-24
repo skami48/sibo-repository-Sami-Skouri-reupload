@@ -18,21 +18,21 @@
 @mixin Heading {
   font-family: Satoshi;
   font-weight: 400;
-  color: $Greyscales-Black;
+  color: $Greyscales-White;
   mix-blend-mode: difference;
 }
 
 @mixin Links {
   font-family: Satoshi;
   font-weight: 400;
-  color: $Greyscales-Black;
-  mix-blend-mode: difference; //check later
+  color: $Greyscales-White;
+  mix-blend-mode: difference;
 }
 
 @mixin Paragraph {
   font-family: inter;
 
-  color: $Greyscales-Black;
+  color: $Greyscales-White;
   mix-blend-mode: difference;
 }
 

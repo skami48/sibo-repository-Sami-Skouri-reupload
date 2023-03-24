@@ -6,69 +6,6 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
-/** Content for Menu documents */
-interface MenuDocumentData {
-    /**
-     * Menu Items field in *Menu*
-     *
-     * - **Field Type**: Group
-     * - **Placeholder**: *None*
-     * - **API ID Path**: menu.menu_items[]
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/group
-     *
-     */
-    menu_items: prismicT.GroupField<Simplify<MenuDocumentDataMenuItemsItem>>;
-}
-/**
- * Item in Menu → Menu Items
- *
- */
-export interface MenuDocumentDataMenuItemsItem {
-    /**
-     * Label field in *Menu → Menu Items*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: menu.menu_items[].label
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    label: prismicT.KeyTextField;
-    /**
-     * Link field in *Menu → Menu Items*
-     *
-     * - **Field Type**: Link
-     * - **Placeholder**: *None*
-     * - **API ID Path**: menu.menu_items[].link
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    link: prismicT.LinkField;
-}
-/**
- * Menu document from Prismic
- *
- * - **API ID**: `menu`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type MenuDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<MenuDocumentData>, "menu", Lang>;
-/** Content for TestTypeRepeatable documents */
-type TesttyperepeatableDocumentData = Record<string, never>;
-/**
- * TestTypeRepeatable document from Prismic
- *
- * - **API ID**: `testtyperepeatable`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type TesttyperepeatableDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<TesttyperepeatableDocumentData>, "testtyperepeatable", Lang>;
-export type AllDocumentTypes = MenuDocument | TesttyperepeatableDocument;
 /**
  * Primary content in TestSlice → Primary
  *
@@ -120,9 +57,9 @@ type TestSliceSliceVariation = TestSliceSliceDefault;
 export type TestSliceSlice = prismicT.SharedSlice<"test_slice", TestSliceSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
-        (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
+        (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client;
     }
     namespace Content {
-        export type { MenuDocumentData, MenuDocumentDataMenuItemsItem, MenuDocument, TesttyperepeatableDocumentData, TesttyperepeatableDocument, AllDocumentTypes, TestSliceSliceDefaultPrimary, TestSliceSliceDefault, TestSliceSliceVariation, TestSliceSlice };
+        export type { TestSliceSliceDefaultPrimary, TestSliceSliceDefault, TestSliceSliceVariation, TestSliceSlice };
     }
 }

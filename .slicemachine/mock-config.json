@@ -1,9 +1,10 @@
 {
-  "_cts": {
-    "testtyperepeatable": {},
-    "menu": {}
-  },
+  "_cts": {},
   "slices": {
-    "TestSlice": {}
+    "TestSlice": {
+      "default": {
+        "primary": {}
+      }
+    }
   }
 }
