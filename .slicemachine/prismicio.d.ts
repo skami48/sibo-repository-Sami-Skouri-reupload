@@ -7,6 +7,95 @@ type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
 /**
+ * Primary content in GetinTouch → Primary
+ *
+ */
+interface FirstBlocSliceDefaultPrimary {
+    /**
+     * Title field in *GetinTouch → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: first_bloc.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Text1 field in *GetinTouch → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: first_bloc.primary.Text1
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    Text1: prismicT.TitleField;
+    /**
+     * Image1 field in *GetinTouch → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: first_bloc.primary.image1
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image1: prismicT.ImageField<never>;
+    /**
+     * Image2 field in *GetinTouch → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: first_bloc.primary.image2
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image2: prismicT.ImageField<never>;
+    /**
+     * SideText field in *GetinTouch → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: first_bloc.primary.sidetext
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    sidetext: prismicT.KeyTextField;
+    /**
+     * BottonLik field in *GetinTouch → Primary*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: first_bloc.primary.bottonlik
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    bottonlik: prismicT.LinkField;
+}
+/**
+ * Default variation for GetinTouch Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `FirstBloc`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FirstBlocSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<FirstBlocSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *GetinTouch*
+ *
+ */
+type FirstBlocSliceVariation = FirstBlocSliceDefault;
+/**
+ * GetinTouch Shared Slice
+ *
+ * - **API ID**: `first_bloc`
+ * - **Description**: `FirstBloc`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FirstBlocSlice = prismicT.SharedSlice<"first_bloc", FirstBlocSliceVariation>;
+/**
  * Primary content in TestSlice → Primary
  *
  */
@@ -60,6 +149,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client;
     }
     namespace Content {
-        export type { TestSliceSliceDefaultPrimary, TestSliceSliceDefault, TestSliceSliceVariation, TestSliceSlice };
+        export type { FirstBlocSliceDefaultPrimary, FirstBlocSliceDefault, FirstBlocSliceVariation, FirstBlocSlice, TestSliceSliceDefaultPrimary, TestSliceSliceDefault, TestSliceSliceVariation, TestSliceSlice };
     }
 }

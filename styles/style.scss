@@ -5,13 +5,24 @@
   src: url("./fonts/Satoshi-Bold.otf");
 }
 
-//voir mixblend mod et les font families des bouttons
+//voir  les font families des bouttons
 
 @font-face {
   font-family: Inter;
   src: url("./fonts/Inter-Regular.ttf");
   font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: Inter;
+  src: url("./fonts/Inter-Bold.ttf");
+  font-weight: normal;
   font-style: bold;
+}
+@font-face {
+  font-family: Inter;
+  src: url("./fonts/Inter-Bold.ttf");
+  font-weight: normal;
   font-style: italic;
 }
 
@@ -26,7 +37,6 @@
   font-family: Satoshi;
   font-weight: 400;
   color: $Greyscales-White;
-  mix-blend-mode: difference;
 }
 
 @mixin Paragraph {
@@ -168,5 +178,32 @@ p {
       background-color: $Primaires-Gold;
       color: $Greyscales-Black;
     }
+  }
+}
+
+.getIntouch {
+  height: 867px;
+
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: $Primaires-olive;
+  nav {
+    display: flex;
+    .navMenu {
+      display: flex;
+      gap: 40px;
+    }
+
+    .Logo {
+      margin: auto;
+    }
+  }
+
+  .GetInTouch {
+    height: 940px;
+    width: 45%;
+    background-color: white;
+    position: relative;
+    margin-top: 15%;
   }
 }

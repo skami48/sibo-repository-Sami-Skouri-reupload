@@ -4,7 +4,7 @@ import Link from "next/link";
 import { PrismicProvider } from "@prismicio/react";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "../prismicio";
-import "../styles/styled.scss";
+import "../styles/style.scss";
 
 export default function App({ Component, pageProps }) {
   return (

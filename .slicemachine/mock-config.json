@@ -5,6 +5,16 @@
       "default": {
         "primary": {}
       }
+    },
+    "FirstBloc": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "GetinTouch": {
+      "default": {
+        "primary": {}
+      }
     }
   }
 }

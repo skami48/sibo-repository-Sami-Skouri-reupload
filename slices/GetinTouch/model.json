@@ -1,0 +1,69 @@
+{
+  "id": "first_bloc",
+  "type": "SharedSlice",
+  "name": "GetinTouch",
+  "description": "FirstBloc",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "FirstBloc",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "This is where it all begins...",
+            "allowTargetBlank": true,
+            "single": "heading1"
+          }
+        },
+        "Text1": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Text1",
+            "placeholder": "A nice description of your feature",
+            "allowTargetBlank": true,
+            "single": "heading5"
+          }
+        },
+        "image1": {
+          "type": "Image",
+          "config": {
+            "label": "Image1",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "image2": {
+          "type": "Image",
+          "config": {
+            "label": "Image2",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "sidetext": {
+          "type": "Text",
+          "config": {
+            "label": "SideText",
+            "placeholder": ""
+          }
+        },
+        "bottonlik": {
+          "type": "Link",
+          "config": {
+            "label": "BottonLik",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "select": null
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}
