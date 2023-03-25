@@ -1,5 +1,9 @@
 {
-  "_cts": {},
+  "_cts": {
+    "test_type": {},
+    "page": {},
+    "homepage": {}
+  },
   "slices": {
     "TestSlice": {
       "default": {

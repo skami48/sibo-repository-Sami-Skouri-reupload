@@ -1,6 +1,5 @@
 {
   "apiEndpoint": "https://siborepos.prismic.io/api/v2",
   "libraries": ["@/slices"],
-  "_latest": "0.7.1",
-  "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
+  "_latest": "0.7.1"
 }

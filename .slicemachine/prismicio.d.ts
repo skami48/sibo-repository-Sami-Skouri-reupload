@@ -6,6 +6,116 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
+/** Content for homepage documents */
+interface HomepageDocumentData {
+    /**
+     * title field in *homepage*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: homepage.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+    /**
+     * Slice Zone field in *homepage*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: homepage.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<HomepageDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *homepage → Slice Zone*
+ *
+ */
+type HomepageDocumentDataSlicesSlice = FirstBlocSlice;
+/**
+ * homepage document from Prismic
+ *
+ * - **API ID**: `homepage`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HomepageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<HomepageDocumentData>, "homepage", Lang>;
+/** Content for page documents */
+interface PageDocumentData {
+    /**
+     * title field in *page*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.title
+     * - **Tab**: main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+    /**
+     * Slice Zone field in *page*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.slices[]
+     * - **Tab**: main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<PageDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *page → Slice Zone*
+ *
+ */
+type PageDocumentDataSlicesSlice = FirstBlocSlice;
+/**
+ * page document from Prismic
+ *
+ * - **API ID**: `page`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
+/** Content for test type documents */
+interface TestTypeDocumentData {
+    /**
+     * Slice Zone field in *test type*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: test_type.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<TestTypeDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *test type → Slice Zone*
+ *
+ */
+type TestTypeDocumentDataSlicesSlice = FirstBlocSlice;
+/**
+ * test type document from Prismic
+ *
+ * - **API ID**: `test_type`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type TestTypeDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<TestTypeDocumentData>, "test_type", Lang>;
+export type AllDocumentTypes = HomepageDocument | PageDocument | TestTypeDocument;
 /**
  * Primary content in GetinTouch → Primary
  *
@@ -146,9 +256,9 @@ type TestSliceSliceVariation = TestSliceSliceDefault;
 export type TestSliceSlice = prismicT.SharedSlice<"test_slice", TestSliceSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
-        (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client;
+        (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { FirstBlocSliceDefaultPrimary, FirstBlocSliceDefault, FirstBlocSliceVariation, FirstBlocSlice, TestSliceSliceDefaultPrimary, TestSliceSliceDefault, TestSliceSliceVariation, TestSliceSlice };
+        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, TestTypeDocumentData, TestTypeDocumentDataSlicesSlice, TestTypeDocument, AllDocumentTypes, FirstBlocSliceDefaultPrimary, FirstBlocSliceDefault, FirstBlocSliceVariation, FirstBlocSlice, TestSliceSliceDefaultPrimary, TestSliceSliceDefault, TestSliceSliceVariation, TestSliceSlice };
     }
 }
