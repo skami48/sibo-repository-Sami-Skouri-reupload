@@ -9,23 +9,32 @@
           {
             "type": "heading1",
             "content": {
-              "text": "Grow your rental business with us",
-              "spans": []
-            },
-            "direction": "ltr"
+              "text": "Floating"
+            }
+          }
+        ]
+      },
+      "Text1": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading5",
+            "content": {
+              "text": "Enjoy"
+            }
           }
         ]
       },
       "image1": {
         "origin": {
           "id": "main",
-          "url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
-          "width": 2747,
-          "height": 4120
+          "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
+          "width": 4380,
+          "height": 2895
         },
-        "url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
-        "width": 2747,
-        "height": 4120,
+        "url": "https://images.unsplash.com/photo-1537498425277-c283d32ef9db",
+        "width": 4380,
+        "height": 2895,
         "edit": {
           "zoom": 1,
           "crop": {
@@ -42,13 +51,13 @@
       "image2": {
         "origin": {
           "id": "main",
-          "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8",
-          "width": 3456,
-          "height": 3456
+          "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72",
+          "width": 4010,
+          "height": 4010
         },
-        "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8",
-        "width": 3456,
-        "height": 3456,
+        "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72",
+        "width": 4010,
+        "height": 4010,
         "edit": {
           "zoom": 1,
           "crop": {
@@ -64,26 +73,24 @@
       },
       "sidetext": {
         "__TYPE__": "FieldContent",
-        "value": "detail",
+        "value": "climb",
         "type": "Text"
       },
       "bottonlik": {
         "__TYPE__": "LinkContent",
         "value": {
           "__TYPE__": "ExternalLink",
-          "url": "https://prismic.io"
+          "url": "http://google.com"
         }
       },
-      "Text1": {
+      "get_in_touch_title": {
         "__TYPE__": "StructuredTextContent",
         "value": [
           {
-            "type": "heading5",
+            "type": "paragraph",
             "content": {
-              "text": "By and for  −  travel-tech vacation rental companies",
-              "spans": []
-            },
-            "direction": "ltr"
+              "text": "Ut pariatur anim esse sunt dolor cillum. Reprehenderit culpa aliqua laborum excepteur ea magna consequat mollit aute nulla aute non. Consequat sit occaecat ipsum velit officia id anim culpa amet nisi magna."
+            }
           }
         ]
       }

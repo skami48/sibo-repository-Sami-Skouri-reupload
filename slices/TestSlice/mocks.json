@@ -26,6 +26,21 @@
             "direction": "ltr"
           }
         ]
+      },
+      "sens": {
+        "__TYPE__": "BooleanContent",
+        "value": false
+      },
+      "rzt": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Sint aliquip deserunt eu exercitation consectetur ullamco excepteur ad aute esse officia."
+            }
+          }
+        ]
       }
     },
     "items": [

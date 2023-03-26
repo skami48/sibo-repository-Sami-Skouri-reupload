@@ -30,7 +30,7 @@
   font-family: Satoshi;
   font-weight: 400;
   color: $Greyscales-White;
-  mix-blend-mode: difference;
+  //mix-blend-mode: difference;
 }
 
 @mixin Links {
@@ -43,7 +43,7 @@
   font-family: inter;
 
   color: $Greyscales-White;
-  mix-blend-mode: difference;
+  //mix-blend-mode: difference;
 }
 
 h1 {
@@ -129,7 +129,7 @@ p {
 
   background-color: $Primaires-Gold;
   color: $Primaires-black;
-  :hover {
+  &:hover {
     background-color: $Primaires-black;
     color: $Greyscales-White;
   }
@@ -143,7 +143,7 @@ p {
   &.style1 {
     background-color: $Primaires-Gold;
     color: $Primaires-black;
-    :hover {
+    &:hover {
       background-color: $Primaires-black;
       color: $Greyscales-White;
     }
@@ -151,7 +151,7 @@ p {
   &.style2 {
     background-color: $Primaires-black;
     color: $Greyscales-White;
-    :hover {
+    &:hover {
       background-color: $Greyscales-Dark_Grey;
       color: $Greyscales-White;
     }
@@ -162,11 +162,12 @@ p {
   height: 40px;
   border-radius: 12px;
   display: flex;
-  padding: 12.5px 24px;
+  padding: 8px 24px;
+  vertical-align: middle;
   &.style1 {
     background-color: $Primaires-Gold;
     color: $Primaires-black;
-    :hover {
+    &:hover {
       background-color: $Primaires-black;
       color: $Greyscales-White;
     }
@@ -174,7 +175,7 @@ p {
   &.style2 {
     background-color: $Greyscales-Dark_Grey;
     color: $Greyscales-White;
-    :hover {
+    &:hover {
       background-color: $Primaires-Gold;
       color: $Greyscales-Black;
     }
@@ -183,12 +184,20 @@ p {
 
 .getIntouch {
   height: 867px;
-
+  position: relative;
   padding-left: 5%;
   padding-right: 5%;
   background-color: $Primaires-olive;
+  margin-bottom: 100px;
+  .SVGRope {
+    position: absolute;
+    right: 1%;
+    top: 0;
+  }
   nav {
     display: flex;
+    justify-content: center;
+    padding-top: 40px;
     .navMenu {
       display: flex;
       gap: 40px;
@@ -199,11 +208,40 @@ p {
     }
   }
 
-  .GetInTouch {
+  .TitlesZonetext {
+    background-color: $Greyscales-White;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 375px;
+    height: 299px;
+    padding: 40px;
+    position: absolute;
+    right: 15%;
+    top: 30%;
+    z-index: 999;
+    border-radius: 30px;
+    > p {
+      color: $Primaires-black;
+    }
+  }
+  .GetInTouch_bloc {
     height: 940px;
-    width: 45%;
-    background-color: white;
+    width: 100%;
+
     position: relative;
-    margin-top: 15%;
+    margin-top: 10%;
+    .titleFlex {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+    }
+    .ImageSlot {
+      border-radius: 15px;
+      max-width: 578px;
+      max-height: 578px;
+      margin-top: 100px;
+      overflow: hidden;
+    }
   }
 }

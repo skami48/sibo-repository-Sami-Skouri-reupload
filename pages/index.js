@@ -1,6 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
+
 import { createClient } from "../prismicio";
 import { SliceZone } from "@prismicio/react";
 import { components } from "../slices";

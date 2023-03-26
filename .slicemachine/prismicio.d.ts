@@ -162,7 +162,7 @@ interface FirstBlocSliceDefaultPrimary {
      */
     image2: prismicT.ImageField<never>;
     /**
-     * SideText field in *GetinTouch → Primary*
+     * TextunderTitle field in *GetinTouch → Primary*
      *
      * - **Field Type**: Text
      * - **Placeholder**: *None*
@@ -181,6 +181,16 @@ interface FirstBlocSliceDefaultPrimary {
      *
      */
     bottonlik: prismicT.LinkField;
+    /**
+     * Get In touch Title field in *GetinTouch → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: first_bloc.primary.get_in_touch_title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    get_in_touch_title: prismicT.RichTextField;
 }
 /**
  * Default variation for GetinTouch Slice
@@ -230,6 +240,27 @@ interface TestSliceSliceDefaultPrimary {
      *
      */
     description: prismicT.RichTextField;
+    /**
+     * sens field in *TestSlice → Primary*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: test_slice.primary.sens
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    sens: prismicT.BooleanField;
+    /**
+     * rzt field in *TestSlice → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: test_slice.primary.rzt
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    rzt: prismicT.RichTextField;
 }
 /**
  * Default variation for TestSlice Slice
