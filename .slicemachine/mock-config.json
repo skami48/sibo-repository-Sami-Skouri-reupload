@@ -20,6 +20,12 @@
         "primary": {},
         "items": {}
       }
+    },
+    "AllInOne": {
+      "default": {
+        "items": {},
+        "primary": {}
+      }
     }
   }
 }

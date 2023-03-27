@@ -19,6 +19,9 @@
           "choices": {
             "first_bloc": {
               "type": "SharedSlice"
+            },
+            "all_in_one": {
+              "type": "SharedSlice"
             }
           }
         }

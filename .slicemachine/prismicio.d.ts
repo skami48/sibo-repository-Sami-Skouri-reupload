@@ -35,7 +35,7 @@ interface HomepageDocumentData {
  * Slice for *homepage → Slice Zone*
  *
  */
-type HomepageDocumentDataSlicesSlice = FirstBlocSlice;
+type HomepageDocumentDataSlicesSlice = FirstBlocSlice | AllInOneSlice;
 /**
  * homepage document from Prismic
  *
@@ -104,7 +104,7 @@ interface TestTypeDocumentData {
  * Slice for *test type → Slice Zone*
  *
  */
-type TestTypeDocumentDataSlicesSlice = FirstBlocSlice;
+type TestTypeDocumentDataSlicesSlice = FirstBlocSlice | AllInOneSlice;
 /**
  * test type document from Prismic
  *
@@ -116,6 +116,216 @@ type TestTypeDocumentDataSlicesSlice = FirstBlocSlice;
  */
 export type TestTypeDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<TestTypeDocumentData>, "test_type", Lang>;
 export type AllDocumentTypes = HomepageDocument | PageDocument | TestTypeDocument;
+/**
+ * Primary content in AllInOne → Primary
+ *
+ */
+interface AllInOneSliceDefaultPrimary {
+    /**
+     * Title field in *AllInOne → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: all_in_one.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Description field in *AllInOne → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: all_in_one.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * Item in AllInOne → Items
+ *
+ */
+export interface AllInOneSliceDefaultItem {
+    /**
+     * ImageText field in *AllInOne → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: all_in_one.items[].imagetext
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    imagetext: prismicT.ImageField<never>;
+    /**
+     * Title field in *AllInOne → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: all_in_one.items[].title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+    /**
+     * Description field in *AllInOne → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: all_in_one.items[].description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+    /**
+     * Image field in *AllInOne → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: all_in_one.items[].image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+    /**
+     * Pins field in *AllInOne → Items*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: all_in_one.items[].pins
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    pins: prismicT.BooleanField;
+    /**
+     * BottonText field in *AllInOne → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: all_in_one.items[].bottontext
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    bottontext: prismicT.KeyTextField;
+    /**
+     * Button field in *AllInOne → Items*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: all_in_one.items[].button
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    button: prismicT.LinkField;
+    /**
+     * ButtonItem00 field in *AllInOne → Items*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: all_in_one.items[].buttonitem00
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    buttonitem00: prismicT.BooleanField;
+    /**
+     * Item00 field in *AllInOne → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: all_in_one.items[].item00
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    item00: prismicT.KeyTextField;
+    /**
+     * ButtonItem01 field in *AllInOne → Items*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: all_in_one.items[].buttonitem01
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    buttonitem01: prismicT.BooleanField;
+    /**
+     * Item01 field in *AllInOne → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: all_in_one.items[].item01
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    item01: prismicT.KeyTextField;
+    /**
+     * ButtonItem02 field in *AllInOne → Items*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: all_in_one.items[].buttonitem02
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    buttonitem02: prismicT.BooleanField;
+    /**
+     * Item02 field in *AllInOne → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: all_in_one.items[].item02
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    item02: prismicT.KeyTextField;
+    /**
+     * ButtonItem03 field in *AllInOne → Items*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: all_in_one.items[].buttonitem03
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    buttonitem03: prismicT.BooleanField;
+    /**
+     * Item03 field in *AllInOne → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: all_in_one.items[].item03
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    item03: prismicT.KeyTextField;
+}
+/**
+ * Default variation for AllInOne Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `AllInOne`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type AllInOneSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<AllInOneSliceDefaultPrimary>, Simplify<AllInOneSliceDefaultItem>>;
+/**
+ * Slice variation for *AllInOne*
+ *
+ */
+type AllInOneSliceVariation = AllInOneSliceDefault;
+/**
+ * AllInOne Shared Slice
+ *
+ * - **API ID**: `all_in_one`
+ * - **Description**: `AllInOne`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type AllInOneSlice = prismicT.SharedSlice<"all_in_one", AllInOneSliceVariation>;
 /**
  * Primary content in GetinTouch → Primary
  *
@@ -290,6 +500,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, TestTypeDocumentData, TestTypeDocumentDataSlicesSlice, TestTypeDocument, AllDocumentTypes, FirstBlocSliceDefaultPrimary, FirstBlocSliceDefault, FirstBlocSliceVariation, FirstBlocSlice, TestSliceSliceDefaultPrimary, TestSliceSliceDefault, TestSliceSliceVariation, TestSliceSlice };
+        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, TestTypeDocumentData, TestTypeDocumentDataSlicesSlice, TestTypeDocument, AllDocumentTypes, AllInOneSliceDefaultPrimary, AllInOneSliceDefaultItem, AllInOneSliceDefault, AllInOneSliceVariation, AllInOneSlice, FirstBlocSliceDefaultPrimary, FirstBlocSliceDefault, FirstBlocSliceVariation, FirstBlocSlice, TestSliceSliceDefaultPrimary, TestSliceSliceDefault, TestSliceSliceVariation, TestSliceSlice };
     }
 }
