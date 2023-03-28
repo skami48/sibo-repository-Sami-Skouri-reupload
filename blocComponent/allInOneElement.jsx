@@ -10,7 +10,7 @@ export default function AllinOneElement({ sliceitem }) {
       <div className="ImageContainer">
         <Image
           src={sliceitem.image.url}
-          alt={sliceitem.image.alt}
+          alt={"image"}
           placeholder="empty"
           fill
         />
@@ -19,7 +19,7 @@ export default function AllinOneElement({ sliceitem }) {
         <div className="Title ">
           <Image
             src={sliceitem.imagetext.url}
-            alt={sliceitem.imagetext.alt}
+            alt={"image"}
             placeholder="empty"
             width={64}
             height={64}

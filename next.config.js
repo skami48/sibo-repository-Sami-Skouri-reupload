@@ -7,7 +7,7 @@ const nextConfig = {
     includePaths: [path.join(__dirname, "styles")],
   },
   images: {
-    domains: ["images.unsplash.com", "images.prismic.io"],
+    domains: ["images.unsplash.com", "images.prismic.io", "localhost"],
   },
 };
 

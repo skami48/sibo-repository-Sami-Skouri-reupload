@@ -14,8 +14,8 @@ const AllInOne = ({ slice }) => {
 
       return (
         <>
-          {slice?.items?.map((i, index) => (
-            <AllinOneElement sliceitem={i} key={index}></AllinOneElement>
+          {slice?.items?.map((i, x) => (
+            <AllinOneElement sliceitem={i} key={x}></AllinOneElement>
           ))}
         </>
       );

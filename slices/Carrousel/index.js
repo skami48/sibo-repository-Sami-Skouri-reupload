@@ -68,6 +68,7 @@ const Carrousel = ({ slice }) => {
               height="214"
               viewBox="0 0 238 214"
               fill="none"
+              alt="signature"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -81,7 +82,8 @@ const Carrousel = ({ slice }) => {
           <div className="ImageContainer">
             <Image
               src={slice.items[currentImage].elementimage.url}
-              alt={slice.items[currentImage].elementimage.alt}
+              alt={"image"}
+              placeholder="empty"
               fill
             />
           </div>
