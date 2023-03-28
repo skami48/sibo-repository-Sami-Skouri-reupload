@@ -2,7 +2,8 @@
   "_cts": {
     "test_type": {},
     "page": {},
-    "homepage": {}
+    "homepage": {},
+    "qsdqsdq": {}
   },
   "slices": {
     "TestSlice": {
@@ -32,6 +33,7 @@
         "items": {},
         "primary": {}
       }
-    }
+    },
+    "Footer": {}
   }
 }

@@ -2,12 +2,14 @@
 
 import AllInOne from './AllInOne';
 import Carrousel from './Carrousel';
+import Footer from './Footer';
 import GetinTouch from './GetinTouch';
 import TestSlice from './TestSlice';
 
 export {
 	AllInOne,
 	Carrousel,
+	Footer,
 	GetinTouch,
 	TestSlice,
 };
@@ -15,6 +17,7 @@ export {
 export const components = {
 	all_in_one: AllInOne,
 	carrousel: Carrousel,
+	footer: Footer,
 	first_bloc: GetinTouch,
 	test_slice: TestSlice,
 };

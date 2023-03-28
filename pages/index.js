@@ -3,6 +3,7 @@ import Head from "next/head";
 import { createClient } from "../prismicio";
 import { SliceZone } from "@prismicio/react";
 import { components } from "../slices";
+import Link from "next/link";
 
 export default function Home({ page }) {
   return (
@@ -19,6 +20,111 @@ export default function Home({ page }) {
           components={components}
         ></SliceZone>
       </main>
+      <footer className="footer">
+        <div className="list">
+          <div className="elem1">
+            <h3 href={"#"} className="Big">
+              Services
+            </h3>
+          </div>
+          <div className="elem6">
+            <Link className="black" href={"#"}>
+              Full PMS
+            </Link>
+            <Link className="black" href={"#"}>
+              White label branding
+            </Link>
+            <Link className="black" href={"#"}>
+              Dedicated support team
+            </Link>
+          </div>
+          <div className="elem2">
+            <h3 href={"#"} className="Big">
+              Features
+            </h3>
+          </div>
+          <div className="elem7">
+            <Link className="black" href={"#"}>
+              Channel Management
+            </Link>
+            <Link className="black" href={"#"}>
+              Customised Website & Mobile App
+            </Link>
+            <Link className="black" href={"#"}>
+              Payment processing, Paylinks & Deposits
+            </Link>
+            <Link className="black" href={"#"}>
+              Multi calendar
+            </Link>
+            <Link className="black" href={"#"}>
+              Pricing tool
+            </Link>
+            <Link className="black" href={"#"}>
+              Owner Portal
+            </Link>
+          </div>
+          <div className="elem8">
+            <Link className="black" href={"#"}>
+              Online Check-In
+            </Link>
+            <Link className="black" href={"#"}>
+              Journey
+            </Link>
+            <Link className="black" href={"#"}>
+              Unified Inbox
+            </Link>
+            <Link className="black" href={"#"}>
+              Customizable Analytics
+            </Link>
+            <Link className="black" href={"#"}>
+              NPS and InStay reviews
+            </Link>
+          </div>
+
+          <div className="elem4">
+            <h3 href={"#"} className="Big">
+              Company
+            </h3>
+          </div>
+          <div className="elem9">
+            <Link className="black" href={"#"}>
+              About us
+            </Link>
+            <Link className="black" href={"#"}>
+              Careers
+            </Link>
+            <Link className="black" href={"#"}>
+              Blog
+            </Link>
+          </div>
+          <div className="elem5">
+            <h3 href={"#"} className="Big">
+              Contact
+            </h3>
+          </div>
+          <div className="elem10">
+            <Link href={"#"} className="CTA-Medium style1">
+              <div>Get in touch</div>
+            </Link>
+            <Link href={"#"} className="CTA-Medium style2">
+              <div>Get a quote</div>
+            </Link>
+          </div>
+        </div>
+        <hr />
+        <div className="BottomElem">
+          <h3>sibo</h3>
+          <div>
+            <p className="black">©2023 SIBO. All rights Reserved</p>
+            <Link className="black" href={"#"}>
+              Legal Mentions
+            </Link>
+            <Link className="black" href={"#"}>
+              Made by Bruno
+            </Link>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }

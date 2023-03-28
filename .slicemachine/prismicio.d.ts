@@ -35,7 +35,7 @@ interface HomepageDocumentData {
  * Slice for *homepage → Slice Zone*
  *
  */
-type HomepageDocumentDataSlicesSlice = FirstBlocSlice | AllInOneSlice;
+type HomepageDocumentDataSlicesSlice = FirstBlocSlice | AllInOneSlice | CarrouselSlice;
 /**
  * homepage document from Prismic
  *
@@ -86,6 +86,18 @@ type PageDocumentDataSlicesSlice = FirstBlocSlice;
  * @typeParam Lang - Language API ID of the document.
  */
 export type PageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
+/** Content for qsdqsdq documents */
+type QsdqsdqDocumentData = Record<string, never>;
+/**
+ * qsdqsdq document from Prismic
+ *
+ * - **API ID**: `qsdqsdq`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type QsdqsdqDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<QsdqsdqDocumentData>, "qsdqsdq", Lang>;
 /** Content for test type documents */
 interface TestTypeDocumentData {
     /**
@@ -115,7 +127,7 @@ type TestTypeDocumentDataSlicesSlice = FirstBlocSlice | AllInOneSlice;
  * @typeParam Lang - Language API ID of the document.
  */
 export type TestTypeDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<TestTypeDocumentData>, "test_type", Lang>;
-export type AllDocumentTypes = HomepageDocument | PageDocument | TestTypeDocument;
+export type AllDocumentTypes = HomepageDocument | PageDocument | QsdqsdqDocument | TestTypeDocument;
 /**
  * Primary content in AllInOne → Primary
  *
@@ -432,6 +444,55 @@ type CarrouselSliceVariation = CarrouselSliceDefault;
  */
 export type CarrouselSlice = prismicT.SharedSlice<"carrousel", CarrouselSliceVariation>;
 /**
+ * Primary content in Footer → Primary
+ *
+ */
+interface FooterSliceDefaultPrimary {
+    /**
+     * Title field in *Footer → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: footer.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Description field in *Footer → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: footer.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * Default variation for Footer Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Footer`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FooterSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<FooterSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *Footer*
+ *
+ */
+type FooterSliceVariation = FooterSliceDefault;
+/**
+ * Footer Shared Slice
+ *
+ * - **API ID**: `footer`
+ * - **Description**: `Footer`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FooterSlice = prismicT.SharedSlice<"footer", FooterSliceVariation>;
+/**
  * Primary content in GetinTouch → Primary
  *
  */
@@ -605,6 +666,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, TestTypeDocumentData, TestTypeDocumentDataSlicesSlice, TestTypeDocument, AllDocumentTypes, AllInOneSliceDefaultPrimary, AllInOneSliceDefaultItem, AllInOneSliceDefault, AllInOneSliceVariation, AllInOneSlice, CarrouselSliceDefaultPrimary, CarrouselSliceDefaultItem, CarrouselSliceDefault, CarrouselSliceVariation, CarrouselSlice, FirstBlocSliceDefaultPrimary, FirstBlocSliceDefault, FirstBlocSliceVariation, FirstBlocSlice, TestSliceSliceDefaultPrimary, TestSliceSliceDefault, TestSliceSliceVariation, TestSliceSlice };
+        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, QsdqsdqDocumentData, QsdqsdqDocument, TestTypeDocumentData, TestTypeDocumentDataSlicesSlice, TestTypeDocument, AllDocumentTypes, AllInOneSliceDefaultPrimary, AllInOneSliceDefaultItem, AllInOneSliceDefault, AllInOneSliceVariation, AllInOneSlice, CarrouselSliceDefaultPrimary, CarrouselSliceDefaultItem, CarrouselSliceDefault, CarrouselSliceVariation, CarrouselSlice, FooterSliceDefaultPrimary, FooterSliceDefault, FooterSliceVariation, FooterSlice, FirstBlocSliceDefaultPrimary, FirstBlocSliceDefault, FirstBlocSliceVariation, FirstBlocSlice, TestSliceSliceDefaultPrimary, TestSliceSliceDefault, TestSliceSliceVariation, TestSliceSlice };
     }
 }

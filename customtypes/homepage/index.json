@@ -29,6 +29,9 @@
             },
             "all_in_one": {
               "type": "SharedSlice"
+            },
+            "carrousel": {
+              "type": "SharedSlice"
             }
           }
         }

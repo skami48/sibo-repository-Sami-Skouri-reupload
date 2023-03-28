@@ -368,10 +368,16 @@ p {
 .CarrousselBloc {
   background-color: $Primaires-black;
   height: 597px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   > div {
     padding: 20px 10%;
     display: flex;
+
+    max-width: 1208px;
+    width: 100%;
   }
   .CarrousselRightElement {
     width: 60%;
@@ -428,6 +434,9 @@ p {
     position: relative;
     svg {
       position: absolute;
+      z-index: 10;
+      right: 0px;
+      top: 100px;
     }
   }
   .ImageContainer {
@@ -436,6 +445,114 @@ p {
     height: 248px;
     > img {
       height: 100%;
+    }
+  }
+}
+
+.footer {
+  margin: auto;
+  margin-top: 100px;
+
+  max-width: 1208px;
+  height: 460px;
+  a {
+    min-width: 150px;
+
+    margin-top: 3px;
+  }
+  p,
+  h3 {
+    margin-top: 0px;
+    color: $Primaires-black;
+  }
+  .black {
+    color: $Primaires-black;
+  }
+  .list {
+    height: 70%;
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(2, 25%);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+
+    .elem1 {
+      grid-area: 1 / 1 / 2 / 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .elem2 {
+      grid-area: 1 / 2 / 2 / 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .elem3 {
+      grid-area: 1 / 3 / 2 / 4;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .elem4 {
+      grid-area: 1 / 4 / 2 / 5;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .elem5 {
+      grid-area: 1 / 5 / 2 / 6;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .elem6 {
+      grid-area: 2 / 1 / 3 / 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .elem7 {
+      grid-area: 2 / 2 / 3 / 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .elem8 {
+      grid-area: 2 / 3 / 3 / 4;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .elem9 {
+      grid-area: 2 / 4 / 3 / 5;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .elem10 {
+      grid-area: 2 / 5 / 3 / 6;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+  hr {
+    margin-top: 40px;
+    border-radius: 50%;
+    opacity: 0.3;
+    width: 80%;
+  }
+  .BottomElem {
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 25%;
+    align-items: center;
+    > div {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
     }
   }
 }
