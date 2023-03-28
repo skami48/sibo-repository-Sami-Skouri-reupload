@@ -287,9 +287,9 @@ p {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 1208px;
+  max-width: 1208px;
   margin: auto;
-
+  margin-bottom: 150px;
   .title h5 {
     color: $Secondary-Velour;
   }
@@ -311,7 +311,14 @@ p {
       &:nth-child(2n) {
         flex-direction: row-reverse;
       }
+      .ImageContainer {
+        max-width: 578px;
 
+        position: relative;
+        width: 100%;
+        height: 430px;
+        overflow: hidden;
+      }
       .Title {
         display: flex;
         align-items: center;
@@ -354,6 +361,81 @@ p {
           gap: 15px;
         }
       }
+    }
+  }
+}
+
+.CarrousselBloc {
+  background-color: $Primaires-black;
+  height: 597px;
+
+  > div {
+    padding: 20px 10%;
+    display: flex;
+  }
+  .CarrousselRightElement {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    height: 397px;
+  }
+  .CarrousselLeftElement {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 60px;
+  }
+  .Buttons {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    > button {
+      padding: 0;
+      border: none;
+      background: $Greyscales-White;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      > svg {
+        height: 16px;
+      }
+    }
+    .ButtonPins {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      margin-left: 10px;
+      .ButtonPin {
+        width: 8px;
+        height: 8px;
+        padding: 0;
+        border: none;
+        background: $Greyscales-Dark_Grey;
+        border-radius: 50%;
+      }
+      .Selected {
+        background: $Greyscales-White !important;
+      }
+    }
+  }
+  .Signature {
+    position: relative;
+    svg {
+      position: absolute;
+    }
+  }
+  .ImageContainer {
+    position: relative;
+    max-width: 248px;
+    height: 248px;
+    > img {
+      height: 100%;
     }
   }
 }

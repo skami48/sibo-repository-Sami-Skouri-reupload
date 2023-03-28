@@ -12,8 +12,7 @@ export default function AllinOneElement({ sliceitem }) {
           src={sliceitem.image.url}
           alt={sliceitem.image.alt}
           placeholder="empty"
-          width={578}
-          height={430}
+          fill
         />
       </div>
       <div className="Content">

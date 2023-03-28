@@ -327,6 +327,111 @@ type AllInOneSliceVariation = AllInOneSliceDefault;
  */
 export type AllInOneSlice = prismicT.SharedSlice<"all_in_one", AllInOneSliceVariation>;
 /**
+ * Primary content in Carrousel → Primary
+ *
+ */
+interface CarrouselSliceDefaultPrimary {
+    /**
+     * Title field in *Carrousel → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: carrousel.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Description field in *Carrousel → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: carrousel.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * Item in Carrousel → Items
+ *
+ */
+export interface CarrouselSliceDefaultItem {
+    /**
+     * ElementTitle field in *Carrousel → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: carrousel.items[].elementtitle
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    elementtitle: prismicT.KeyTextField;
+    /**
+     * ElementText field in *Carrousel → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: carrousel.items[].elementtext
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    elementtext: prismicT.RichTextField;
+    /**
+     * ElementImage field in *Carrousel → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: carrousel.items[].elementimage
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    elementimage: prismicT.ImageField<never>;
+    /**
+     * ImageTitle field in *Carrousel → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: carrousel.items[].imagetitle
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    imagetitle: prismicT.KeyTextField;
+    /**
+     * ImageSubtitle field in *Carrousel → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: carrousel.items[].imagesubtitle
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    imagesubtitle: prismicT.RichTextField;
+}
+/**
+ * Default variation for Carrousel Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Carrousel`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type CarrouselSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<CarrouselSliceDefaultPrimary>, Simplify<CarrouselSliceDefaultItem>>;
+/**
+ * Slice variation for *Carrousel*
+ *
+ */
+type CarrouselSliceVariation = CarrouselSliceDefault;
+/**
+ * Carrousel Shared Slice
+ *
+ * - **API ID**: `carrousel`
+ * - **Description**: `Carrousel`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type CarrouselSlice = prismicT.SharedSlice<"carrousel", CarrouselSliceVariation>;
+/**
  * Primary content in GetinTouch → Primary
  *
  */
@@ -500,6 +605,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, TestTypeDocumentData, TestTypeDocumentDataSlicesSlice, TestTypeDocument, AllDocumentTypes, AllInOneSliceDefaultPrimary, AllInOneSliceDefaultItem, AllInOneSliceDefault, AllInOneSliceVariation, AllInOneSlice, FirstBlocSliceDefaultPrimary, FirstBlocSliceDefault, FirstBlocSliceVariation, FirstBlocSlice, TestSliceSliceDefaultPrimary, TestSliceSliceDefault, TestSliceSliceVariation, TestSliceSlice };
+        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, TestTypeDocumentData, TestTypeDocumentDataSlicesSlice, TestTypeDocument, AllDocumentTypes, AllInOneSliceDefaultPrimary, AllInOneSliceDefaultItem, AllInOneSliceDefault, AllInOneSliceVariation, AllInOneSlice, CarrouselSliceDefaultPrimary, CarrouselSliceDefaultItem, CarrouselSliceDefault, CarrouselSliceVariation, CarrouselSlice, FirstBlocSliceDefaultPrimary, FirstBlocSliceDefault, FirstBlocSliceVariation, FirstBlocSlice, TestSliceSliceDefaultPrimary, TestSliceSliceDefault, TestSliceSliceVariation, TestSliceSlice };
     }
 }

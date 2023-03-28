@@ -26,6 +26,12 @@
         "items": {},
         "primary": {}
       }
+    },
+    "Carrousel": {
+      "default": {
+        "items": {},
+        "primary": {}
+      }
     }
   }
 }
