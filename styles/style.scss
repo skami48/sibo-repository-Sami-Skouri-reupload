@@ -20,12 +20,12 @@ body {
 @font-face {
   font-family: Inter;
   src: url("./fonts/Inter-Bold.ttf");
-  font-weight: normal;
+  font-weight: bold;
   font-style: bold;
 }
 @font-face {
   font-family: Inter;
-  src: url("./fonts/Inter-Bold.ttf");
+  src: url("./fonts/Inter-Italic.otf");
   font-weight: normal;
   font-style: italic;
 }
@@ -214,13 +214,36 @@ p {
     }
     nav {
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
       padding-top: 40px;
+      margin-left: 2%;
+      margin-right: 2%;
       position: relative;
       z-index: 50;
+      h3 {
+        &.logoMenu {
+          color: $Greyscales-Black !important;
+        }
+      }
+      .nomenu {
+        background-color: rgba(255, 255, 255, 0.2) !important;
+        color: $Greyscales-White;
+        &:hover {
+          color: $Greyscales-Black;
+        }
+      }
       .navMenu {
         display: flex;
         gap: 40px;
+        button {
+          border: none;
+          background-color: inherit;
+          color: $Greyscales-White;
+          font-family: Inter;
+        }
+        .Black {
+          color: $Greyscales-Black;
+        }
       }
 
       .Logo {
@@ -247,13 +270,14 @@ p {
       position: absolute;
       right: 50px;
       top: 40%;
-      z-index: 999;
+      z-index: 2;
       border-radius: 30px;
       > a {
         margin-bottom: 0px;
       }
       h4 {
         color: $Primaires-black;
+        font-family: inter;
       }
     }
     .GetInTouch_bloc {
@@ -457,16 +481,19 @@ p {
   height: 460px;
   a {
     min-width: 150px;
+    font-family: inter;
 
     margin-top: 3px;
   }
   p,
   h3 {
+    font-family: inter;
     margin-top: 0px;
     color: $Primaires-black;
   }
   .black {
     color: $Primaires-black;
+    font-style: regular;
   }
   .list {
     height: 70%;
@@ -543,16 +570,61 @@ p {
     opacity: 0.3;
     width: 80%;
   }
+
   .BottomElem {
     margin-top: 2%;
     display: flex;
     justify-content: space-between;
     margin-right: 25%;
     align-items: center;
+    h3 {
+      color: $Primaires-olive;
+    }
     > div {
       display: flex;
       justify-content: space-between;
       gap: 20px;
+    }
+  }
+}
+
+.Menu {
+  p,
+  h6 {
+    color: $Greyscales-Black;
+  }
+
+  position: absolute;
+  background-color: $Greyscales-White;
+  top: 20px;
+  max-width: 1208px;
+  width: 90%;
+  height: 250px;
+  padding-top: 70px;
+  border-radius: 20px;
+
+  box-shadow: 0px 10px 9px 2px rgba(0, 0, 0, 0.31);
+  z-index: 10;
+  > hr {
+    border-radius: 50%;
+    width: 80%;
+  }
+  > div {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  button {
+    padding: 0;
+    border: none;
+    background-color: $Greyscales-White;
+    border-radius: 20px;
+    padding: 10px;
+    width: 30%;
+    &:hover {
+      background-color: #f6f7fa;
     }
   }
 }
