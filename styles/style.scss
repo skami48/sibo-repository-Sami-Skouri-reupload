@@ -702,7 +702,7 @@ img {
     display: grid;
     grid-template-columns: repeat(5, 20%);
     grid-template-rows: repeat(2, 25%);
-    grid-column-gap: 0px;
+    grid-column-gap: 10px;
     grid-row-gap: 0px;
 
     .elem1 {
